@@ -4,10 +4,13 @@ require 'test_helper'
 # another comment1
 
 class CarsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   fixtures :cars
   include Devise::TestHelpers
   setup do
     @car = cars(:one)
+    sign_in users(:one)
     # @controller = CarsController.new
     # @request = ActionController::TestRequest.new
     # @response = ActionController::TestRequest.new

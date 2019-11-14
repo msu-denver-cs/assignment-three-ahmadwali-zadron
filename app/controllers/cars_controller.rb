@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   # GET /cars
@@ -12,8 +13,10 @@ class CarsController < ApplicationController
   # GET /cars/1.json
   def show
 
+
   end
 
+  #commented
   # GET /cars/new
   def new
     @car = Car.new
